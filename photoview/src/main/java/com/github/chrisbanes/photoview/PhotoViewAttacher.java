@@ -235,7 +235,9 @@ public class PhotoViewAttacher implements View.OnTouchListener,
                     float y = ev.getY();
                     if (scale < getMediumScale()) {
                         setScale(getMediumScale(), x, y, true);
-                    } else if (scale >= getMediumScale() && scale < getMaximumScale()) {
+                    } else if (scale == getMediumScale()) {
+                        setScale(getMinimumScale(), x, y, true);
+                    } else if (scale > getMediumScale() && scale < getMaximumScale()) {
                         setScale(getMaximumScale(), x, y, true);
                     } else {
                         setScale(getMinimumScale(), x, y, true);
